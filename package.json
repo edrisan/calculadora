@@ -4,6 +4,7 @@
   "description": "simular uma calculadora",
   "main": "index.js",
   "scripts": {
+    "start": "livereload | http-server -p 8081",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
