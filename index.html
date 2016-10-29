@@ -29,11 +29,11 @@
   </div>
 </div>
 <script>
-var valor1 = document.getElementById('valor1').value;
-var valor2 = document.getElementById('valor2').value;
+var valor1 = document.getElementById('valor1');
+var valor2 = document.getElementById('valor2');
 
-function somar(valor1, valor2){
-  var res = valor1 + valor2;
+function somar(){
+  var res = parseFloat(valor1.value) + parseFloat(valor2.value);
         document.getElementById('resultado').innerHTML = res;
         console.log(typeof res);
 }
