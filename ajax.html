@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lendo Arquivo Json Com Ajax</title>
+</head>
+<button type="button" name="button" onclick="ajax_get_json()">Ajax</button>
+<div id="resultado">
+
+</div>
+
+<body>
+    <script>
+        function ajax_get_json() {
+            let hr = new XMLHttpRequest();
+            hr.open("GET", "https://jsonplaceholder.typicode.com/todos", true);
+            hr.setRequestHeader("Content-type", "application/json", true);
+            hr.onreadystatechange = () => {
+                if (hr.readyState == 4 && hr.status == 200) {
+                    let data = JSON.parse(hr.responseText);
+                    let resultado = document.getElementById("resultado");
+                    resultado.innerHTML = "";
+                    for (let obj in data) {
+                        resultado.innerHTML += '<code>' + data[obj].title + '</code><br/><hr/>';
+                    }
+                }
+            }
+            hr.send(null);
+            resultado.innerHTML = "Pesquisando....";
+        }
+    </script>
+</body>
+
+</html>

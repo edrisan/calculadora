@@ -20,21 +20,71 @@
         <input type="number" id="valor2">
     </div>
     <button class="btn btn-info" onclick="somar()">Somar</button>
-    <button class="btn btn-danger">Subtrair</button>
-    <button class="btn btn-warning">Multiplicar</button>
-    <button class="btn btn-success">Dividir</button>
+    <button class="btn btn-danger" onclick="sub()">Subtrair</button>
+    <button class="btn btn-warning" onclick="mult()">Multiplicar</button>
+    <button class="btn btn-success" onclick="div()">Dividir</button>
 
 <div class="panel panel-footer"><div id="resultado"></div></div>
 
   </div>
 </div>
 <script>
+var valor1 = document.getElementById('valor1');
+var valor2 = document.getElementById('valor2');
+var resultado = document.getElementById('resultado');
 
-function somar(valor1, valor2){
-  var valor1 = parseFloat(document.getElementById('valor1').value);
-  var valor2 = parseFloat(document.getElementById('valor2').value);
-  var res = valor1 + valor2;
-        document.getElementById('resultado').innerHTML = res;
+function somar(){
+var v1 = parseFloat(valor1.value);
+var v2 = parseFloat(valor2.value);
+
+ // = v1 + v2;
+  if((isNaN(v1)) || (isNaN(v2))){
+  resultado.innerHTML = "Preencha todos os campos com valores numéricos.";
+  return false;
+}
+
+resultado.innerHTML = v1+v2;
+return true;
+
+}
+
+function sub(){
+  var v1 = parseFloat(valor1.value);
+  var v2 = parseFloat(valor2.value);
+
+  if((isNaN(v1)) || (isNaN(v2))){
+  resultado.innerHTML = "Preencha todos os campos com valores numéricos.";
+    return false;
+}
+
+resultado.innerHTML = v1-v2;
+return true;
+}
+
+function mult(){
+  var v1 = parseFloat(valor1.value);
+  var v2 = parseFloat(valor2.value);
+
+  if((isNaN(v1)) || (isNaN(v2))){
+  resultado.innerHTML = "Preencha todos os campos com valores numéricos.";
+    return false;
+}
+
+resultado.innerHTML = v1*v2;
+return true;
+}
+
+function div(){
+  var v1 = parseFloat(valor1.value);
+  var v2 = parseFloat(valor2.value);
+
+  if((isNaN(v1)) || (isNaN(v2))){
+  resultado.innerHTML = "Preencha todos os campos com valores numéricos.";
+    return false;
+}
+
+resultado.innerHTML = v1/v2;
+return true;
 }
 
 </script>

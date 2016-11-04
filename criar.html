@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  let objeto1 = {
+           user: "Jão",
+           age: 35,
+           country: "Brazil"
+       };
+       let objeto2 = {
+           user: "Will",
+           age: 27,
+           country: "United Kingdom"
+       };
+       let objeto3 = {
+           user: "Abiel",
+           age: 19,
+           country: "Mexico"
+       };
+       let objetos = {
+           usuario1: objeto1,
+           usuario2: objeto2,
+           usuario3: objeto3
+       };
+       document.head.insertAdjacentHTML('beforeend', '<link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css>');
+       let display = document.createElement('div');
+       let link = document.createElement('a');
+       let TextLink = document.createTextNode("Ajax");
+       link.appendChild(TextLink);
+       link.setAttribute("href", "ajax.html");
+       link.setAttribute("class", "badge");
+       display.setAttribute("id", "resultado");
+       display.setAttribute("class", "container well");
+       display.innerHTML = '<pre><code>' + JSON.stringify(objetos) + '</code></pre>';
+       display.appendChild(link);
+       console.info(JSON.parse(JSON.stringify(objetos)));
+       document.body.appendChild(display);
+  </script>
+</body>
+</html>
